@@ -1,0 +1,33 @@
+import { Component, OnInit, Input , Output,EventEmitter } from '@angular/core';
+import { parse } from 'papaparse';
+
+
+@Component({
+  selector: 'translation-engine',
+  templateUrl: './translation-engine.component.html',
+  styleUrls: ['./translation-engine.component.css']
+})
+export class TranslationEngineComponent implements OnInit {
+
+  constructor() { }
+  csvResults;
+  @Input() languageSelected;
+  @Output() sendLanguages = new EventEmitter();
+
+  ngOnInit() {
+    let csvFilePath = "./../../../assets/lang/aiesec.csv";
+    parse(csvFilePath, {
+      download: true,
+      complete: (result) => {
+        let modifiedResults = this.modifyResults(result.data)
+        // console.dir(this.csvResults = result.data);
+        // console.dir(modifiedResults);
+      }
+    });
+  }
+
+  modifyResults(results) {
+    let langArray = results[0];
+    this.sendLanguages.emit(langArray);
+  }
+}
