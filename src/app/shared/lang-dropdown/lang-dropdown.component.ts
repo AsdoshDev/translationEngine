@@ -1,4 +1,6 @@
+import { TranslationEngineService } from './../translation-engine/translation-engine.service';
 import { Component, OnInit,Input,Output,EventEmitter } from '@angular/core';
+
 
 @Component({
   selector: 'lang-dropdown',
@@ -7,15 +9,15 @@ import { Component, OnInit,Input,Output,EventEmitter } from '@angular/core';
 })
 export class LangDropdownComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service : TranslationEngineService) { }
   @Input() languages;
   @Output() selectedLang = new EventEmitter();
   ngOnInit() {
   }
 
   onChange(val){
-    debugger;
     this.selectedLang.emit(val);
+    this.service.passLang(val);
   }
 
 }

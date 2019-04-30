@@ -1,5 +1,7 @@
+import { TranslationEngineService } from './translation-engine.service';
 import { Component, OnInit, Input , Output,EventEmitter } from '@angular/core';
 import { parse } from 'papaparse';
+
 
 
 @Component({
@@ -9,7 +11,7 @@ import { parse } from 'papaparse';
 })
 export class TranslationEngineComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service:TranslationEngineService) { }
   csvResults;
   @Input() languageSelected;
   @Output() sendLanguages = new EventEmitter();
@@ -20,14 +22,21 @@ export class TranslationEngineComponent implements OnInit {
       download: true,
       complete: (result) => {
         let modifiedResults = this.modifyResults(result.data)
-        // console.dir(this.csvResults = result.data);
-        // console.dir(modifiedResults);
       }
+    });
+
+    this.service.getLang.subscribe(data =>{
+      this.translateText(data);
     });
   }
 
   modifyResults(results) {
     let langArray = results[0];
     this.sendLanguages.emit(langArray);
+  }
+
+  translateText(lang){
+    this.languageSelected = lang; 
+    console.log(lang);
   }
 }

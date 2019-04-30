@@ -72,9 +72,9 @@
                   <div class="custom-footer-select dropup">
                       Select Language : <lang-dropdown [languages] = "languages" (selectedLang) = "langSelected = $event"></lang-dropdown>
                   </div>
+                  <translation-engine (sendLanguages) = "languages = $event"></translation-engine>
               </div>
           </span>
       </div>
   </div>
 </footer>
-<translation-engine [languageSelected] = "langSelected" (sendLanguages) = "languages = $event"></translation-engine>
