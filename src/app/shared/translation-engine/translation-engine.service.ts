@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
+import { Observable, Subject,BehaviorSubject } from 'rxjs';
+
 
 @Injectable({
     providedIn: 'root',
@@ -8,7 +9,7 @@ import { Observable, Subject } from 'rxjs';
 export class TranslationEngineService {
     constructor() { }
 
-    private subject = new Subject<any>();
+    private subject = new BehaviorSubject<any>(null);
     public getLang = this.subject.asObservable();
 
     passLang(lang:any){

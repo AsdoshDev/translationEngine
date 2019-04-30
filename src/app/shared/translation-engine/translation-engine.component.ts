@@ -13,7 +13,6 @@ export class TranslationEngineComponent implements OnInit {
 
   constructor(private service:TranslationEngineService) { }
   csvResults;
-  @Input() languageSelected;
   @Output() sendLanguages = new EventEmitter();
 
   ngOnInit() {
@@ -26,6 +25,7 @@ export class TranslationEngineComponent implements OnInit {
     });
 
     this.service.getLang.subscribe(data =>{
+      debugger;
       this.translateText(data);
     });
   }
@@ -36,7 +36,6 @@ export class TranslationEngineComponent implements OnInit {
   }
 
   translateText(lang){
-    this.languageSelected = lang; 
-    console.log(lang);
+    console.log("TRANSLATING TEXT to " + lang);
   }
 }
