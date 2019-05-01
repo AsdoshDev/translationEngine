@@ -246,6 +246,86 @@
   </div>
 </div>
 
-<app-footer></app-footer>
+
+<!-- Footer -->
+<footer>
+    <div class="hidden-md-down">
+        <div class="container">
+            <div class="desc">
+                <h6>AIESEC</h6>
+                <p>AIESEC is a non-governmental not-for-profit organisation in consultative status with the United
+                    Nations Economic and Social Council (ECOSOC), affiliated with the UN DPI, member of ICMYO, and
+                    is recognized by UNESCO. AIESEC International Inc. is registered as a Not-for-profit
+                    Organisation under the Canadian Not-for-profit Corporations Act - 2018-02-08, Corporation
+                    Number: 1055154-6 and Quebec Business Number (NEQ) 1173457178 in Montreal, Quebec, Canada.</p>
+            </div>
+  
+            <div class="about">
+                <h6>About</h6>
+                <a routerLink="/about-us"> About Us </a>
+                <a href="#"> Help </a>
+                <a href="#"> Blog </a>
+                <a href="#"> Press </a>
+                <a href="#" target="_blank">
+                    Annual
+                    Report </a>
+            </div>
+  
+            <div class="contact">
+                <h6> Youth </h6>
+                <a> Global Volunteer </a>
+                <a> Global Talent </a>
+                <a> Global Entrepreneur </a>
+                <a> Youth 4 Global Goals </a>
+                <a> YouthSpeak </a>
+            </div>
+  
+            <div class="partners">
+                <h6> Organizations </h6>
+                <a href="#"> Partner with us </a>
+                <a href="#"> Global Volunteer </a>
+                <a href="#"> Global Talent </a>
+                <a href="#"> Global Entrepreneur </a>
+                <a href="#"> Premium Organization </a>
+            </div>
+  
+            <div class="membership">
+                <h6> Membership </h6>
+                <a> Join Us </a>
+                <a> Find your country! </a>
+                <a href="#" target="_blank"> Alumni </a>
+            </div>
+        </div>
+  
+        <div class="container">
+            <span>
+                © AIESEC 2018
+            </span>
+            <span>
+                <a href="#" target="_blank"> Terms & Privacy </a>
+            </span>
+            <span>
+                <a href="#" target="_blank"> Cookies Policy </a>
+            </span>
+            <span></span>
+            <span class="social-footer">
+                <a href="#" target="_blank"><i class="cm cm-facebook"></i></a>
+                <a href="#" target="_blank"><i class="cm cm-instagram"></i></a>
+                <a href="#" target="_blank"><i class="cm cm-twitter"></i></a>
+                <a href="#" target="_blank"><i class="cm cm-linkedin"></i></a>
+                <a href="#" target="_blank"><i class="cm cm-youtube"></i></a>
+            </span>
+            <span>
+                <div class="select-box-custom">
+                    <div class="custom-footer-select dropup">
+                        Select Language : <lang-dropdown [languages] = "languages"></lang-dropdown>
+                    </div>
+                    <translation-engine [csvFilePath] = "csvFilePath" (sendLanguages) = "languages = $event"></translation-engine>
+                </div>
+            </span>
+        </div>
+    </div>
+  </footer>
+  
 <!-- Footer end -->
 <router-outlet></router-outlet>

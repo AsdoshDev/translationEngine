@@ -9,14 +9,13 @@ import { TranslationEngineComponent } from './shared/translation-engine/translat
 
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { LangDropdownComponent } from './shared/lang-dropdown/lang-dropdown.component';
-import { FooterComponent } from './components/footer/footer.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     TranslationEngineComponent,
     LangDropdownComponent,
-    FooterComponent
   ],
   imports: [
     BrowserModule,

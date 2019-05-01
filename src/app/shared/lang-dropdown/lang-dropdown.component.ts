@@ -1,6 +1,7 @@
 import { TranslationEngineService } from './../translation-engine/translation-engine.service';
 import { Component, OnInit,Input,Output,EventEmitter } from '@angular/core';
 import {LANG_MAPPING} from './../../../assets/lang/lang-code';
+import detectBrowserLanguage from 'detect-browser-language'
 
 @Component({
   selector: 'lang-dropdown',
@@ -16,6 +17,7 @@ export class LangDropdownComponent implements OnInit {
   ngOnInit() {
     let language = window.navigator['userLanguage'] || window.navigator.language;
     console.log("BROWSER LANGUAGE");
+    console.log(detectBrowserLanguage());
     console.log(language);
     this.defaultLang = LANG_MAPPING[language.split('-')[0]];
     this.service.passLang(this.defaultLang);
