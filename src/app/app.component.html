@@ -318,9 +318,9 @@
             <span>
                 <div class="select-box-custom">
                     <div class="custom-footer-select dropup">
-                        Select Language : <lang-dropdown [languages] = "languages"></lang-dropdown>
+                        Select Language : <translation-engine [csvFilePath] = "csvFilePath" ></translation-engine>
                     </div>
-                    <translation-engine [csvFilePath] = "csvFilePath" (sendLanguages) = "languages = $event"></translation-engine>
+                    
                 </div>
             </span>
         </div>

@@ -8,14 +8,13 @@ import { AppComponent } from './app.component';
 import { TranslationEngineComponent } from './shared/translation-engine/translation-engine.component';
 
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { LangDropdownComponent } from './shared/lang-dropdown/lang-dropdown.component';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
     TranslationEngineComponent,
-    LangDropdownComponent,
   ],
   imports: [
     BrowserModule,
