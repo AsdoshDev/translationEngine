@@ -27,7 +27,7 @@ export class TranslationEngineComponent implements OnInit {
     let language = window.navigator['userLanguage'] || window.navigator.language;
     this.defaultLang = LANG_MAPPING[language.split('-')[0]];
     
-    /* use any one of below lines to manually change the language of the site */
+    /* use any one of below lines to programatically change the language of the site anf refresh the page */
     
     // this.defaultLang = LANG_MAPPING['es'];
     // this.defaultLang = LANG_MAPPING['zh'];
@@ -55,7 +55,6 @@ export class TranslationEngineComponent implements OnInit {
 
 
   translateText(lang) {
-
     /* find the index of browser language or user selected language from array got from csv file */
     let langIndex = this.languages.indexOf(lang);
     /* find the index of browser language or user selected language from array got from csv file */
